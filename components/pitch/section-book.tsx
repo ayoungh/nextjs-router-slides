@@ -7,7 +7,9 @@ import Confetti from "react-confetti";
 
 export function SectionBook() {
 
-
+if (typeof window !== "undefined") {
+  return (<div>Loading...</div>);
+}
 
   return (
     <div className="min-h-screen relative w-screen">

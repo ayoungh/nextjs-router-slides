@@ -18,7 +18,7 @@ import {
   CarouselItem,
 } from "@/components/ui/carousel";
 import { useEffect, useRef, useState } from "react";
-// import { Toolbar } from "@/components/Toolbar";
+import { Toolbar } from "@/components/Toolbar";
  
 
 export function Slides() {
@@ -93,7 +93,7 @@ export function Slides() {
          */}
       </CarouselContent>
 
-      {/* <Toolbar views={views} /> */}
+      <Toolbar views={views} />
     </Carousel>
   );
 }
