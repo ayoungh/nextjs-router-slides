@@ -1,3 +1,5 @@
+"use client";
+
 import { Slides } from '@/components/Slides'
 import React from 'react'
 
