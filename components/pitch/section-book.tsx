@@ -3,22 +3,23 @@
 // import { CalEmbed } from "@/components/cal-embed";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Confetti from "react-confetti";
 
 export function SectionBook() {
+  const [width, setWidth] = useState(0);
+  const [height, setHeight] = useState(0);
 
-// if (typeof window !== "undefined") {
-//   return (<div>Loading...</div>);
-// }
-
-// fall back fow window object 
-
-
-const { innerWidth = 1000, innerHeight = 1000 } = window;
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+    setWidth(window.innerWidth);
+    setHeight(window.innerHeight);
+    }
+  },[]);
 
   return (
     <div className="min-h-screen relative w-screen">
-      <Confetti width={innerWidth} height={innerHeight} />
+      {width > 0 && height > 0 && <Confetti width={width} height={height} />}
 
       {/* <div className="absolute left-4 right-4 md:left-8 md:right-8 top-4 flex justify-between text-lg">
         <span>Book a meeting</span>
