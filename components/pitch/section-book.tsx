@@ -7,13 +7,18 @@ import Confetti from "react-confetti";
 
 export function SectionBook() {
 
-if (typeof window !== "undefined") {
-  return (<div>Loading...</div>);
-}
+// if (typeof window !== "undefined") {
+//   return (<div>Loading...</div>);
+// }
+
+// fall back fow window object 
+
+
+const { innerWidth = 1000, innerHeight = 1000 } = window;
 
   return (
     <div className="min-h-screen relative w-screen">
-      <Confetti width={window.innerWidth} height={window.innerHeight} />
+      <Confetti width={innerWidth} height={innerHeight} />
 
       {/* <div className="absolute left-4 right-4 md:left-8 md:right-8 top-4 flex justify-between text-lg">
         <span>Book a meeting</span>
