@@ -22,46 +22,66 @@ import { AnimatePresence, motion } from "framer-motion";
 import { useHotkeys } from "react-hotkeys-hook";
 // import { FaXTwitter } from "react-icons/fa6";
 // import { CopyInput } from "../copy-input";
-import { Calendar, ChevronLeft, ChevronRight, Eye, Share, Twitter } from "lucide-react";
+import {
+  Calendar,
+  ChevronLeft,
+  ChevronRight,
+  Eye,
+  Share,
+  Twitter,
+} from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Props = {
   views: number;
 };
 
-const popupCenter = ({ url, title, w, h }: { url: string; title: string; w: number; h: number }) => {
-  const dualScreenLeft =
-    window.screenLeft !== undefined ? window.screenLeft : window.screenX;
-  const dualScreenTop =
-    window.screenTop !== undefined ? window.screenTop : window.screenY;
+const popupCenter = ({
+  url,
+  title,
+  w,
+  h,
+}: {
+  url: string;
+  title: string;
+  w: number;
+  h: number;
+}) => {
+  if (typeof window !== "undefined") {
+    const dualScreenLeft =
+      window.screenLeft !== undefined ? window.screenLeft : window.screenX;
+    const dualScreenTop =
+      window.screenTop !== undefined ? window.screenTop : window.screenY;
 
-  const width = window.innerWidth
-    ? window.innerWidth
-    : document.documentElement.clientWidth
-    ? document.documentElement.clientWidth
-    : screen.width;
-  const height = window.innerHeight
-    ? window.innerHeight
-    : document.documentElement.clientHeight
-    ? document.documentElement.clientHeight
-    : screen.height;
+    const width = window.innerWidth
+      ? window.innerWidth
+      : document.documentElement.clientWidth
+      ? document.documentElement.clientWidth
+      : screen.width;
+    const height = window.innerHeight
+      ? window.innerHeight
+      : document.documentElement.clientHeight
+      ? document.documentElement.clientHeight
+      : screen.height;
 
-  const systemZoom = width / window.screen.availWidth;
-  const left = (width - w) / 2 / systemZoom + dualScreenLeft;
-  const top = (height - h) / 2 / systemZoom + dualScreenTop;
-  const newWindow = window.open(
-    url,
-    title,
-    `
+    const systemZoom = width / window.screen.availWidth;
+    const left = (width - w) / 2 / systemZoom + dualScreenLeft;
+    const top = (height - h) / 2 / systemZoom + dualScreenTop;
+    const newWindow = window.open(
+      url,
+      title,
+      `
     scrollbars=yes,
     width=${w / systemZoom}, 
     height=${h / systemZoom}, 
     top=${top}, 
     left=${left}
     `
-  );
+    );
 
-  return newWindow;
+    return newWindow;
+  }
+  return null;
 };
 
 export function Toolbar({ views }: Props) {
@@ -91,7 +111,7 @@ export function Toolbar({ views }: Props) {
                 <Tooltip>
                   <TooltipTrigger>
                     <div className="text-[#878787] flex items-center space-x-2 border-r-[1px] border-border pr-4">
-                        <Eye size={18} />
+                      <Eye size={18} />
                       {/* <Icons.Visibility size={18} /> */}
 
                       <span className="text-sm">
@@ -115,7 +135,7 @@ export function Toolbar({ views }: Props) {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <button type="button" onClick={() => api.scrollTo(100)}>
-                        <Calendar size={18} className="text-[#878787]" />
+                      <Calendar size={18} className="text-[#878787]" />
                       {/* <Icons.Calendar size={18} className="text-[#878787]" /> */}
                     </button>
                   </TooltipTrigger>
@@ -130,7 +150,7 @@ export function Toolbar({ views }: Props) {
                 <Tooltip>
                   <TooltipTrigger>
                     <DialogTrigger asChild>
-                        <Share size={18} className="text-[#878787] -mt-[1px]" />
+                      <Share size={18} className="text-[#878787] -mt-[1px]" />
                       {/* <Icons.Share
                         size={18}
                         className="text-[#878787] -mt-[1px]"
