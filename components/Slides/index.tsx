@@ -21,11 +21,13 @@ import { SectionWhy } from "@/app/slides/components/section-why";
 import { SectionPageRouter } from "@/app/slides/components/section-page-router";
 import { SectionAppRouter } from "@/app/slides/components/section-app-router";
 import { SectionAppRouter2 } from "@/app/slides/components/section-app-router2";
+import { SectionAppRouter3 } from "@/app/slides/components/section-app-router3";
+import { SectionAppRouter4 } from "@/app/slides/components/section-app-router4";
  
 
 export function Slides() {
-    // fake for now 
-  const [views, setViews] = useState(6);
+    // fake for now - use for slides count
+  const [views, setViews] = useState(7);
   const called = useRef(false);
   const [api, setApi] = useState<CarouselApi>();
   const [current, setCurrent] = useState(0);
@@ -73,6 +75,12 @@ export function Slides() {
         </CarouselItem>
         <CarouselItem>
           <SectionAppRouter2 />
+        </CarouselItem>
+        <CarouselItem>
+          <SectionAppRouter3 />
+        </CarouselItem>
+        <CarouselItem>
+          <SectionAppRouter4 />
         </CarouselItem>
         {/* <CarouselItem>
           <SectionProblem />

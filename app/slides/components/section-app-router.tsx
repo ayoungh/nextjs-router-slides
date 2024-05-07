@@ -1,8 +1,6 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
-import { Card } from "@/components/ui/card";
 import { GeistProvider, CssBaseline, Tree } from "@geist-ui/core";
 import Editor from "@/components/Editor";
 import { useState } from "react";

@@ -94,7 +94,7 @@ export function Toolbar({ views }: Props) {
 
   const handleOnShare = () => {
     const popup = popupCenter({
-      url: "https://twitter.com/intent/tweet?text=Check this pitch deck https://midday.ai/pitch @middayai",
+      url: "https://twitter.com/intent/tweet?text=Check out this Lunch and Learn deck on moving to the nextjs app router. https://nextjs-router-slides.vercel.app/ @ayoungh",
       title: "Share",
       w: 800,
       h: 400,
@@ -228,21 +228,19 @@ export function Toolbar({ views }: Props) {
       <DialogContent className="sm:max-w-[425px]">
         <div className="p-6">
           <DialogHeader>
-            <DialogTitle>Share</DialogTitle>
+            <DialogTitle>Share this L&L</DialogTitle>
           </DialogHeader>
           <DialogDescription>
-            Thanks for sharing our pitch deck.
+            Sharing is caring. 
           </DialogDescription>
 
-          <div className="grid gap-6 py-4">
-            {/* <CopyInput value="https://midday.ai/pitch" /> */}
+          <div className="py-4">
             <Button
-              className="w-full flex items-center space-x-2 h-10"
+              className="flex items-center space-x-2 h-10"
               onClick={handleOnShare}
             >
               <span>Share on</span>
               <Twitter size={18} />
-              {/* <FaXTwitter /> */}
             </Button>
           </div>
         </div>
