@@ -1,5 +1,12 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## L&L 2024 on Next.js pages router to app router
+
+Using things from the pitch deck of [midday.io](https://github.com/midday-ai/midday/tree/main)
+[Shadcn UI](https://ui.shadcn.com/)
+
+A very basic slide deck to use while talking through why we migrated from the pages router to the app router in Next.js.
+
 ## Getting Started
 
 First, run the development server:
