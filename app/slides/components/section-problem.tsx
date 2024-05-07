@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import reciept from "./reciept.png";
 import { Card } from "@/components/ui/card";
 import { GeistProvider, CssBaseline, Tree } from "@geist-ui/core";
 
@@ -12,7 +11,7 @@ export function SectionProblem() {
       <CssBaseline />
       <div className="min-h-screen relative w-screen">
         <div className="absolute left-4 right-4 md:left-8 md:right-8 top-4 flex justify-between text-lg">
-          <span>Pages Router</span>
+          <span className="font-bold">Pages Router</span>
           <span className="text-[#878787]">
             <Link href="/">Home</Link>
           </span>
@@ -41,7 +40,7 @@ export function SectionProblem() {
                   manage.
                 </p>
 
-                <Tree>
+                <Tree initialExpand>
                   <Tree.File name="package.json" />
                   <Tree.Folder name="pages">
                     <Tree.Folder name="dashboard">
@@ -85,8 +84,8 @@ export function SectionProblem() {
             </div>
             <div>
               <Image
-                src={reciept}
-                alt="Reciept"
+                src="/cluttered.png"
+                alt="cluttered desk of a developer"
                 width={650}
                 height={875}
                 quality={100}

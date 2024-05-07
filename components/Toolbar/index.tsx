@@ -27,7 +27,9 @@ import {
   ChevronLeft,
   ChevronRight,
   Eye,
+  Home,
   Share,
+  ShieldQuestion,
   Twitter,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -128,22 +130,35 @@ export function Toolbar({ views }: Props) {
                     className="py-1 px-3 rounded-sm"
                     sideOffset={25}
                   >
-                    <span className="text-xs">Views</span>
+                    <span className="text-xs">Slides</span>
                   </TooltipContent>
                 </Tooltip>
 
                 <Tooltip>
                   <TooltipTrigger asChild>
-                    <button type="button" onClick={() => api.scrollTo(100)}>
-                      <Calendar size={18} className="text-[#878787]" />
-                      {/* <Icons.Calendar size={18} className="text-[#878787]" /> */}
+                    <button type="button" onClick={() => api.scrollTo(0)}>
+                      <Home size={18} className="text-[#878787]" />
                     </button>
                   </TooltipTrigger>
                   <TooltipContent
                     className="py-1 px-3 rounded-sm"
                     sideOffset={25}
                   >
-                    <span className="text-xs">Book a meeting</span>
+                    <span className="text-xs">Home</span>
+                  </TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <button type="button" onClick={() => api.scrollTo(100)}>
+                      <ShieldQuestion size={18} className="text-[#878787]" />
+                    </button>
+                  </TooltipTrigger>
+                  <TooltipContent
+                    className="py-1 px-3 rounded-sm"
+                    sideOffset={25}
+                  >
+                    <span className="text-xs">Questions?</span>
                   </TooltipContent>
                 </Tooltip>
 
@@ -151,10 +166,6 @@ export function Toolbar({ views }: Props) {
                   <TooltipTrigger>
                     <DialogTrigger asChild>
                       <Share size={18} className="text-[#878787] -mt-[1px]" />
-                      {/* <Icons.Share
-                        size={18}
-                        className="text-[#878787] -mt-[1px]"
-                      /> */}
                     </DialogTrigger>
                   </TooltipTrigger>
                   <TooltipContent
@@ -177,7 +188,6 @@ export function Toolbar({ views }: Props) {
                         }}
                       >
                         <ChevronLeft className="h-6 w-6" />
-                        {/* <Icons.ChevronLeft className="h-6 w-6" /> */}
                       </button>
                     </TooltipTrigger>
                     <TooltipContent
