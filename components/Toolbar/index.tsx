@@ -11,7 +11,6 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
-// import { Icons } from "@midday/ui/icons";
 import {
   Tooltip,
   TooltipContent,
@@ -20,8 +19,6 @@ import {
 } from "@/components/ui/tooltip";
 import { AnimatePresence, motion } from "framer-motion";
 import { useHotkeys } from "react-hotkeys-hook";
-// import { FaXTwitter } from "react-icons/fa6";
-// import { CopyInput } from "../copy-input";
 import {
   Calendar,
   ChevronLeft,
@@ -114,7 +111,6 @@ export function Toolbar({ views }: Props) {
                   <TooltipTrigger>
                     <div className="text-[#878787] flex items-center space-x-2 border-r-[1px] border-border pr-4">
                       <Eye size={18} />
-                      {/* <Icons.Visibility size={18} /> */}
 
                       <span className="text-sm">
                         {Intl.NumberFormat("en", {
@@ -208,7 +204,6 @@ export function Toolbar({ views }: Props) {
                         }}
                       >
                         <ChevronRight className="h-6 w-6" />
-                        {/* <Icons.ChevronRight className="h-6 w-6" /> */}
                       </button>
                     </TooltipTrigger>
                     <TooltipContent
