@@ -20,24 +20,38 @@ export function SectionAppRouter4() {
               <h2 className="text-2xl pt-4">Client and Server components</h2>
 
               <p className="text-sm">
-                You can now render components on the server and hydrate them on client.
+                You can now render components on the server and hydrate them on
+                client.
               </p>
 
               <p className="text-sm">
-                All client components will need the use client directive at the top to tell next that it is a client only component.
+                All client components will need the use client directive at the
+                top to tell next that it is a client only component.
               </p>
             </Card>
           </div>
 
           <div className="ml-auto w-full">
-            <Image
-              src="/serverclientlayout.gif"
-              alt="Server and client layouts"
-              className="rounded-md"
-              width={650}
-              height={875}
-              quality={100}
-            />
+            <article>
+              <Image
+                src="/serverclientlayout.gif"
+                alt="Server and client layouts"
+                className="rounded-md"
+                width={650}
+                height={875}
+                quality={100}
+              />
+              <footer>
+                <a
+                  className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
+                  href="https://x.com/asidorenko_/status/1693631458982650286"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Tweet by Alex Sidorenko
+                </a>
+              </footer>
+            </article>
           </div>
         </div>
       </div>
